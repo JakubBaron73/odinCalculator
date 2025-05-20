@@ -34,22 +34,28 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     equal.addEventListener("click", function(){
-        if(currentValue != '' && previousValue != ''){
-            calculate()
+        if(currentValue !== '' && previousValue !== ''){
+            calculate();
+    
             previousScreen.textContent = '';
             if(previousValue.length <= 10){
                 currentScreen.textContent = previousValue; 
             } else {
                 currentScreen.textContent = previousValue.slice(0,10) + "...";
             }
+    
+            
+            currentValue = '';
         }
+    });
+    
     })
 
     decimal.addEventListener("click", function(){
         addDecimal();
         currentScreen.textContent = currentValue;
     });
-})
+
 
 function handleNumber(num){
     if(currentValue.length <= 10){
@@ -58,10 +64,22 @@ function handleNumber(num){
 }
 
 function handleOperator(op){
+    if (currentValue === '' && previousValue !== '') {
+        // Allows changing operator before entering new number
+        operator = op;
+        return;
+    }
+
+    if (previousValue !== '' && currentValue !== '') {
+        calculate(); // Do the last operation first
+    }
+
     operator = op;
-    previousValue = currentValue;
+    previousValue = currentValue || previousValue;
     currentValue = '';
 }
+
+
 
 function calculate(){
     previousValue = Number(previousValue);
