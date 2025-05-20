@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+button.btn {
+    height: 75px;
+    width: 75px;
+    margin: 15px;
+    font-size: 40px;
+}
+
+button.btn:hover{
+    background-color: lightseagreen;
+}
+
+button.number {
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+button.operator {
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+button.decimal {
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+button.equal {
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+button.clear {
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.first-row {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+#screen {
+    width: 300px;
+    border: 1px solid lightseagreen;
+    height: 75px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.previous {
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+
+.current {
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
