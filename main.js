@@ -19,8 +19,29 @@ document.addEventListener("DOMContentLoaded", function(){
             currentScreen.textContent = currentValue;
         })
     );
+
+    operators.forEach((op) => op.addEventListener("click", function(e){
+        handleOperator(e.target.textContent)
+        previousScreen.textContent = previousValue + " " + operator;
+        currentScreen.textContent = currentValue;
+    }));
+
+    clear.addEventListener("click", function(){
+        previousValue = '';
+        currentValue = '';
+        previousScreen.textContent = currentValue;
+        currentScreen.textContent = currentValue;
+    })
 })
 
 function handleNumber(num){
-    currentValue += num;
+    if(currentValue.length <= 10){
+        currentValue += num;
+    }
+}
+
+function handleOperator(op){
+    operator = op;
+    previousValue = currentValue;
+    currentValue = '';
 }

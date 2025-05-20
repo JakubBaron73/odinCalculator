@@ -65,6 +65,7 @@ button.clear {
     display: flex;
     justify-content: flex-end;
     padding-right: 5px;
+    height: 50%;
 }
 
 .current {
@@ -72,4 +73,5 @@ button.clear {
     display: flex;
     justify-content: flex-end;
     padding-right: 5px;
+    height: 50%;
 }
